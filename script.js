@@ -36,13 +36,11 @@ const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${A
 fetch(url)
   .then(response => response.json())
   .then(weatherData => {
-    // Update the temperature
     tempOfCity.textContent = `${weatherData.main.temp}°F`;
 
-    // Update the weather icon
     weatherIcon.setAttribute('src', `https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`);
     weatherIcon.setAttribute('alt', weatherData.weather[0].description);
-    weatherIcon.style.display = 'inline'; // Make the icon visible
+    weatherIcon.style.display = 'inline';
   })
   .catch(error => {
     console.error("Error fetching weather data:", error);
