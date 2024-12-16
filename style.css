@@ -4,3 +4,6 @@ body{
 h1{
     color: darkred;
 }
+blockquote{
+    font-style: italic;
+}
